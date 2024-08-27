@@ -1,0 +1,114 @@
+:root {
+    --navbar-bg-color: #001428;
+    --text-color: white;
+    --highlight-color: #f27405;
+    --hover-highlight-color: #d56204;
+    --logo-height: 50px;
+    --font-size: 18px;
+    --vertical-padding: 20px;
+    --button-padding: 12px 24px;
+    --border-radius: 20px;
+    --icon-margin-right: 8px;
+  }
+  
+  .navbar {
+    background-color: var(--navbar-bg-color);
+    padding: var(--vertical-padding) 20px;
+    display: flex;
+    justify-content: center;
+    position: relative;
+  }
+  
+  .navbar-container {
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .logo img {
+    height: var(--logo-height);
+  }
+  
+  .nav-links {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .nav-links li {
+    margin: 0 15px;
+  }
+  
+  .nav-links a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: var(--font-size);
+  }
+  
+  .nav-links a:hover {
+    color: var(--highlight-color);
+  }
+  
+  .contact-info a {
+    display: flex;
+    align-items: center;
+    color: var(--text-color);
+    font-size: var(--font-size);
+  }
+  
+  .fa-icon {
+    margin-right: var(--icon-margin-right);
+  }
+  
+  .quote-button {
+    background-color: var(--highlight-color);
+    color: var(--text-color);
+    padding: var(--button-padding);
+    border-radius: var(--border-radius);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: var(--font-size);
+    transition: background-color 0.3s;
+  }
+  
+  .quote-button:hover {
+    background-color: var(--hover-highlight-color);
+  }
+  
+  /* Mobile Styles */
+  @media (max-width: 768px) {
+    .nav-links {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      background-color: var(--navbar-bg-color);
+      flex-direction: column;
+      align-items: center;
+      display: none;
+    }
+  
+    .nav-links.open {
+      display: flex;
+    }
+  
+    .nav-links li {
+      margin: 15px 0;
+    }
+  
+    .menu-icon {
+      display: block;
+      cursor: pointer;
+      color: var(--text-color);
+      font-size: 24px;
+    }
+  
+    .navbar-container {
+      justify-content: space-between;
+    }
+  }
+  
