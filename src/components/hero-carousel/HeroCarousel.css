@@ -1,4 +1,4 @@
-.carousel-container {
+.hero-carousel-container {
     position: relative;
     background-color: #041c34;
     width: 100%;
@@ -8,52 +8,50 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-
 }
 
-.carousel-slide {
+.hero-carousel-slide {
     display: flex;
     align-items: center;
     justify-content: center;
     width: 80%;
     height: 100%;  
 }
-.carousel-text-container{
+.hero-carousel-text-container {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-
     width: 60%;
 }
-.carousel-text {
 
+.hero-carousel-text {
     flex: 1;
     flex-wrap: wrap;
     position: relative;
     text-align: left;
 }
 
-.carousel-text h1, .carousel-text h2 {
+.hero-carousel-text h1, .hero-carousel-text h2 {
     margin: 0;
 }
 
-.carousel-text h1 {
+.hero-carousel-text h1 {
     font-family: "Playfair Display", serif;
     font-size: 72px;
     color: #ef4a29;
 }
 
-.carousel-text h2 {
+.hero-carousel-text h2 {
     font-size: 20px;
     color: white;
 }
 
 /* Animations for text sliding in from the left */
-.text-enter {
-    animation: slide-in-left 1s forwards;
+.hero-text-enter {
+    animation: hero-slide-in-left 1s forwards;
 }
 
-@keyframes slide-in-left {
+@keyframes hero-slide-in-left {
     0% {
         transform: translateX(-100%);
         opacity: 0;
@@ -64,18 +62,18 @@
     }
 }
 
-.carousel-image {
+.hero-carousel-image {
     flex: 1;
     text-align: center;
     position: relative;
 }
 
 /* Animation for image sliding in from the bottom */
-.image-enter {
-    animation: slide-in-bottom 1s forwards;
+.hero-image-enter {
+    animation: hero-slide-in-bottom 1s forwards;
 }
 
-@keyframes slide-in-bottom {
+@keyframes hero-slide-in-bottom {
     0% {
         transform: translateY(100%);
         opacity: 0;
@@ -86,12 +84,12 @@
     }
 }
 
-.carousel-image img {
+.hero-carousel-image img {
     width: 400px;
     height: auto;
 }
 
-.carousel-nav {
+.hero-carousel-nav {
     position: relative;
     margin-top: 20px;
     display: flex;
@@ -99,15 +97,17 @@
     gap: 20px;
     width: 100%;
 }
-.carousel-nav-item{
+
+.hero-carousel-nav-item {
     color: #ffffff;
     font-size: 28px;
 }
-.carousel-nav-active-index,.carousel-nav-by-sign{
+
+.hero-carousel-nav-active-index, .hero-carousel-nav-by-sign {
     color: #ef4a29;
 }
 
-.carousel-nav button {
+.hero-carousel-nav button {
     background-color: transparent;
     color: white;
     border: none;

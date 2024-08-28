@@ -1,0 +1,19 @@
+.carousel-container {
+    width: 100%;
+    margin: 0 auto;
+  }
+  
+  .carousel-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%; /* Adjust this height based on your carousel container's height */
+  }
+  
+  .carousel-item img {
+    max-width: 100px; /* Adjust based on your design */
+    height: 100px;
+    display: block;
+    margin: auto;
+  }
+  

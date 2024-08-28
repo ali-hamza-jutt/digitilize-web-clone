@@ -34,7 +34,7 @@ const HeroCarousel = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       nextSlide();
-    }, 3000); // Automatically change slide every 2 seconds
+    }, 3000); // Automatically change slide every 3 seconds
 
     return () => clearInterval(interval); // Clear the interval on component unmount
   }, []);
@@ -52,22 +52,22 @@ const HeroCarousel = () => {
   };
 
   return (
-    <div className="carousel-container">
-      <div className={`carousel-slide`}>
-        <div className="carousel-text-container">
-          <div className={`carousel-text ${animate ? 'text-enter' : ''}`}>
+    <div className="hero-carousel-container">
+      <div className={`hero-carousel-slide`}>
+        <div className="hero-carousel-text-container">
+          <div className={`hero-carousel-text ${animate ? 'hero-text-enter' : ''}`}>
             <h2>We are highly skilled in</h2>
             <h1>{skillHeadings[currentIndex]}</h1>
           </div>
-          <div className="carousel-nav">
+          <div className="hero-carousel-nav">
             <button onClick={prevSlide}> <FontAwesomeIcon icon={faArrowLeft} /></button>
-            <span className='carousel-nav-item carousel-nav-active-index'>{currentIndex + 1}</span>
-            <span className='carousel-nav-item carousel-nav-by-sign'>/</span>
-            <span className='carousel-nav-item'>{images.length}</span>
+            <span className='hero-carousel-nav-item hero-carousel-nav-active-index'>{currentIndex + 1}</span>
+            <span className='hero-carousel-nav-item hero-carousel-nav-by-sign'>/</span>
+            <span className='hero-carousel-nav-item'>{images.length}</span>
             <button onClick={nextSlide}><FontAwesomeIcon icon={faArrowRight} /></button>
           </div>
         </div>
-        <div className={`carousel-image ${animate ? 'image-enter' : ''}`}>
+        <div className={`hero-carousel-image ${animate ? 'hero-image-enter' : ''}`}>
           <img src={images[currentIndex]} alt="Carousel" />
         </div>
       </div>
