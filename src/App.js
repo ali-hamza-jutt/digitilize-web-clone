@@ -3,6 +3,7 @@ import Navbar from './components/Navbar/Navbar';
 import HeroCarousel from './components/hero-carousel/HeroCarousel';
 import ProductsCarousel from './components/products-carousel/ProductsCarousel';
 import Services from './components/services/Services';
+import TestimonialsCarousel from './components/testimonial-carousel/TestimonialsCarousel';
 function App() {
   return (
     <div className="App">
@@ -10,6 +11,7 @@ function App() {
       <HeroCarousel/>
       <ProductsCarousel/>
       <Services/>
+      <TestimonialsCarousel/>
     </div>
   );
 }

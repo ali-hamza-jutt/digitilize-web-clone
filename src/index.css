@@ -1,4 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+:root{
+  --primary-color:#003366;
+  --secondary-color:#ef4a29;
+  --white-color:#ffffff;
+  --black-color:#000000;
+}
 body {
   margin: 0;
   padding: 0;
