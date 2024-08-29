@@ -1,16 +1,18 @@
-.carousel-container {
+.product-carousel-container {
     width: 100%;
     margin: 0 auto;
+    background-color: var(--white-color);
+    padding: 1rem 0;
   }
   
-  .carousel-item {
+  .product-carousel-item {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100%; /* Adjust this height based on your carousel container's height */
   }
   
-  .carousel-item img {
+  .product-carousel-item img {
     max-width: 100px; /* Adjust based on your design */
     height: 100px;
     display: block;

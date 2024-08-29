@@ -97,14 +97,6 @@ const TestimonialsCarousel = () => {
   const handleOpenModal = () => setOpenModal(true);
   const handleCloseModal = () => setOpenModal(false);
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      handleNext();
-    }, 3000); // Automatically change slide every 3 seconds
-
-    return () => clearInterval(interval); // Clear the interval on component unmount
-  }, []);
-
   // Reset animation after a slide transition
   useEffect(() => {
     if (animating) {
@@ -112,11 +104,10 @@ const TestimonialsCarousel = () => {
         setAnimating(false);
         setDirection(""); // Reset direction to allow re-triggering
       }, 600); // Match this duration to the animation duration in CSS (0.6s)
-  
+
       return () => clearTimeout(timeout); // Cleanup timeout on unmount
     }
   }, [animating]);
-  
 
   // Function to truncate text to 7-8 words
   const truncateText = (text, wordLimit) => {
@@ -128,67 +119,10 @@ const TestimonialsCarousel = () => {
     <div className="carousel-container">
       <p className="carousel-container-secondary-heading">Testimonials</p>
       <h2 className="carousel-container-primary-heading">People who trust us</h2>
-      <div className={`testimonial-container ${direction}`}>
-        <div className="carousel-content">
-          <div className="carousel-item">
-            <img src={testimonials[currentIndex].image} alt={testimonials[currentIndex].name} className="carousel-image" />
-            <Box
-              sx={{
-                '& > legend': { mt: 3 },
-                '.MuiRating-iconEmpty': {
-                  color: '#f2f2f2',
-                },
-                '.MuiRating-iconFilled': {
-                  color: '#ee884c',
-                },
-              }}
-            >
-              <Rating
-                name="read-only"
-                value={parseFloat(5)}
-                readOnly
-                precision={0.1}
-              />
-            </Box>
-            <div className="carousel-text">
-              <p>{truncateText(testimonials[currentIndex].text, 8)} <a onClick={handleOpenModal} className="read-more-button">Read More</a></p>
-              <div className="testimonee-info">
-                <p className="testimonee-name">{testimonials[currentIndex].name},</p>
-                <p className="testimonee-title">{testimonials[currentIndex].title}</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div>
-          <img className="testimonee-image" src={testimonials[currentIndex].image} alt={testimonials[currentIndex].name} />
-        </div>
-      </div>
-      <div className="carousel-controls">
-        <button onClick={handlePrev} className="carousel-control-left">
-          <img className="testimonial-controls-arrow-image testimonial-controls-arrow-left" src={arrowLeft} alt="arrow-left" />
-        </button>
-        <span className="carousel-index">
-          <span className="carousel-index-secondary-color">{currentIndex + 1} / </span>
-          {testimonials.length}
-        </span>
-        <button onClick={handleNext} className="carousel-control-right">
-          <img className="testimonial-controls-arrow-image testimonial-controls-arrow-right" src={arrowRight} alt="arrow-right" />
-        </button>
-      </div>
-
-      {/* Modal for showing full testimonial */}
-      <Modal
-        open={openModal}
-        onClose={handleCloseModal}
-        aria-labelledby="modal-title"
-        aria-describedby="modal-description"
-      >
-        <div className="modal-content">
-          <div className="modal-header">
-            <h2>Testimonial</h2>
-            <button onClick={handleCloseModal} className="modal-close-button">✖</button>
-          </div>
-          <img src={testimonials[currentIndex].image} alt={testimonials[currentIndex].name} className="modal-image" />
+      <div className="testimonial-container">
+      <div className="carousel-content">
+        <div className={`carousel-item ${direction}`}>
+          <img src={testimonials[currentIndex].image} alt={testimonials[currentIndex].name} className="carousel-image" />
           <Box
             sx={{
               '& > legend': { mt: 3 },
@@ -199,22 +133,75 @@ const TestimonialsCarousel = () => {
                 color: '#ee884c',
               },
             }}
-            className="modal-rating"
           >
             <Rating
               name="read-only"
-              value={parseFloat(4)}
+              value={parseFloat(5)}
               readOnly
               precision={0.1}
             />
           </Box>
-          <div className="modal-text">
-            <p id="modal-description">{testimonials[currentIndex].text}</p>
+          <div className="carousel-text">
+            <p>{truncateText(testimonials[currentIndex].text, 8)} <a  onClick={handleOpenModal} className="read-more-button">Read More</a></p>
+            <div className="testimonee-info">
+            <p className="testimonee-name">{testimonials[currentIndex].name},</p>
+            <p className="testimonee-title">{testimonials[currentIndex].title}</p>
+            </div>
           </div>
-          <h3 className="modal-author">{testimonials[currentIndex].name}</h3>
-          <h4 className="modal-title">{testimonials[currentIndex].title}</h4>
         </div>
-      </Modal>
+      </div>
+        <div ><img className="testimonee-image" src={testimonials[currentIndex].image} alt={testimonials[currentIndex].name} /></div>
+
+      </div>
+      
+      <div className="carousel-controls">
+        <button onClick={handlePrev} className="carousel-control-left"><img className="testimonial-controls-arrow-image testimonial-controls-arrow-left" src={arrowLeft} alt="arrow-left" /></button>
+        <span className="carousel-index">
+          <span className="carousel-index-secondary-color">{currentIndex + 1} / </span>
+           {testimonials.length}
+        </span>
+        <button onClick={handleNext} className="carousel-control-right"><img className="testimonial-controls-arrow-image testimonial-controls-arrow-right" src={arrowRight} alt="arrow-right" /></button>
+      </div>
+
+      {/* Modal for showing full testimonial */}
+      <Modal
+  open={openModal}
+  onClose={handleCloseModal}
+  aria-labelledby="modal-title"
+  aria-describedby="modal-description"
+>
+  <div className="modal-content">
+    <div className="modal-header">
+      <h2>Testimonial</h2>
+      <button onClick={handleCloseModal} className="modal-close-button">✖</button>
+    </div>
+    <img src={testimonials[currentIndex].image} alt={testimonials[currentIndex].name} className="modal-image" />
+    <Box
+      sx={{
+        '& > legend': { mt: 3 },
+        '.MuiRating-iconEmpty': {
+          color: '#f2f2f2',
+        },
+        '.MuiRating-iconFilled': {
+          color: '#ee884c',
+        },
+      }}
+      className="modal-rating"
+    >
+      <Rating
+        name="read-only"
+        value={parseFloat(4)}
+        readOnly
+        precision={0.1}
+      />
+    </Box>
+    <div className="modal-text">
+      <p id="modal-description">{testimonials[currentIndex].text}</p>
+    </div>
+    <h3 className="modal-author">{testimonials[currentIndex].name}</h3>
+    <h4 className="modal-title">{testimonials[currentIndex].title}</h4>
+  </div>
+</Modal>
     </div>
   );
 };

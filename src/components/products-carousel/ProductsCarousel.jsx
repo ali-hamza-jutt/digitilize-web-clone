@@ -41,10 +41,10 @@ const ProductsCarousel = () => {
   };
 
   return (
-    <div className="carousel-container">
+    <div className="product-carousel-container">
       <Slider ref={(c) => setSlider(c)} {...settings}>
         {images.map((img, index) => (
-          <div key={index} className="carousel-item">
+          <div key={index} className="product-carousel-item">
             <img src={img} alt={`carousel-${index}`} />
           </div>
         ))}

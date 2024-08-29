@@ -4,6 +4,7 @@ import HeroCarousel from './components/hero-carousel/HeroCarousel';
 import ProductsCarousel from './components/products-carousel/ProductsCarousel';
 import Services from './components/services/Services';
 import TestimonialsCarousel from './components/testimonial-carousel/TestimonialsCarousel';
+import FactsAtAGlance from './components/stats/FactsAtAGlance';
 function App() {
   return (
     <div className="App">
@@ -12,6 +13,7 @@ function App() {
       <ProductsCarousel/>
       <Services/>
       <TestimonialsCarousel/>
+      <FactsAtAGlance/>
     </div>
   );
 }
