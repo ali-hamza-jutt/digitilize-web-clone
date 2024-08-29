@@ -17,9 +17,11 @@
 }
 
   
-  .carousel-container-primary-heading {
-    font-size: 2rem;
-    color: white;
+  .carousel-container-primary-heading{
+    color: var(--primary-color);
+    font-size: var(--primary-heading-font-size);
+    font-family: var(--primary-heading-font-family);
+    color:var(--white-color);
     margin-bottom: 20px;
     letter-spacing: 1px;
   }

@@ -118,7 +118,7 @@ const TestimonialsCarousel = () => {
   return (
     <div className="carousel-container">
       <p className="carousel-container-secondary-heading">Testimonials</p>
-      <h2 className="carousel-container-primary-heading">People who trust us</h2>
+      <p className="carousel-container-primary-heading">People who trust us</p>
       <div className="testimonial-container">
       <div className="carousel-content">
         <div className={`carousel-item ${direction}`}>

@@ -14,7 +14,8 @@
 }
 .services-primary-heading{
     color: var(--services-primary-heading-color);
-    font-size: 48px;
+    font-family: var(--primary-heading-font-family),'serif';
+    font-size: var(--primary-heading-font-size);
     margin: 1rem;
 }
 .services-paragraph{

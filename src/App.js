@@ -5,6 +5,7 @@ import ProductsCarousel from './components/products-carousel/ProductsCarousel';
 import Services from './components/services/Services';
 import TestimonialsCarousel from './components/testimonial-carousel/TestimonialsCarousel';
 import FactsAtAGlance from './components/stats/FactsAtAGlance';
+import AwardsAndCertifications from './components/awards-and-certifications/AwardsAndCertifications';
 function App() {
   return (
     <div className="App">
@@ -14,6 +15,7 @@ function App() {
       <Services/>
       <TestimonialsCarousel/>
       <FactsAtAGlance/>
+      <AwardsAndCertifications/>
     </div>
   );
 }

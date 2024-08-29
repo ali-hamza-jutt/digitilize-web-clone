@@ -40,8 +40,8 @@ const FactsAtAGlance = () => {
 
   return (
     <div className="facts-container">
-      <p className="facts-secondary-title">Stats</p>
-      <h2 className="facts-title">Facts At A Glance</h2>
+      <p className="facts-secondary-heading">Stats</p>
+      <h2 className="facts-primary-heading">Facts At A Glance</h2>
       <div
         className={`facts-grid ${isVisible ? 'animate' : ''}`}
         ref={factsGridRef}

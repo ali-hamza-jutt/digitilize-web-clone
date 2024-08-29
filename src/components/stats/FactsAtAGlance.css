@@ -10,7 +10,7 @@
     color: #003366;
     margin-bottom: 10px;
   }
-  .facts-secondary-title{
+  .facts-secondary-heading{
     margin-bottom: 10px;
     font-size: 1rem;
     color: var(--black-color);
@@ -19,8 +19,14 @@
     position: relative;
     justify-content: center;
   }
+  .facts-primary-heading{
+    color: var( --primary-color);
+    font-size: var( --primary-heading-font-size);
+    font-family: var( --primary-heading-font-family);
+
+  }
   
-  .facts-secondary-title::after {
+  .facts-secondary-heading::after {
     content: "";
     width: 50px;
     height: 2px;
