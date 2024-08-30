@@ -8,8 +8,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: var(--primary-color); /* Background color */
-  background-image: url('../../assets/bck.png'); /* Background image */
+  background-image: url('../../assets/testibck.jpg'); /* Background image */
   background-blend-mode: overlay; /* This blends the background color and image */
   background-size: cover; /* Ensures the image covers the entire container */
   background-position: center; /* Centers the background image */

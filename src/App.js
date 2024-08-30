@@ -6,6 +6,7 @@ import Services from './components/services/Services';
 import TestimonialsCarousel from './components/testimonial-carousel/TestimonialsCarousel';
 import FactsAtAGlance from './components/stats/FactsAtAGlance';
 import AwardsAndCertifications from './components/awards-and-certifications/AwardsAndCertifications';
+import FaqSection from './components/faq-section/FaqSection';
 function App() {
   return (
     <div className="App">
@@ -16,6 +17,7 @@ function App() {
       <TestimonialsCarousel/>
       <FactsAtAGlance/>
       <AwardsAndCertifications/>
+      <FaqSection/>
     </div>
   );
 }
