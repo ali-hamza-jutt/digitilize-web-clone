@@ -7,6 +7,7 @@ import TestimonialsCarousel from './components/testimonial-carousel/Testimonials
 import FactsAtAGlance from './components/stats/FactsAtAGlance';
 import AwardsAndCertifications from './components/awards-and-certifications/AwardsAndCertifications';
 import FaqSection from './components/faq-section/FaqSection';
+import Footer from './components/footer/Footer';
 function App() {
   return (
     <div className="App">
@@ -18,6 +19,7 @@ function App() {
       <FactsAtAGlance/>
       <AwardsAndCertifications/>
       <FaqSection/>
+      <Footer/>
     </div>
   );
 }
