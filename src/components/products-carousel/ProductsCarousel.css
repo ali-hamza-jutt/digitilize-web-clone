@@ -13,8 +13,8 @@
   }
   
   .product-carousel-item img {
-    max-width: 100px; /* Adjust based on your design */
-    height: 100px;
+    max-width: 75px; /* Adjust based on your design */
+    height: 75px;
     display: block;
     margin: auto;
   }
