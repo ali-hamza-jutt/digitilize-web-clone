@@ -1,0 +1,162 @@
+.case-study-container {
+    display: flex;
+    flex-direction: column;
+    height: 90vh;
+    color: white;
+    background:url('../../assets/testibck.jpg');
+
+  }
+  .header-container{
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    height: 20%;
+    margin-top: 1rem;
+  }
+  .header {
+    display: flex;
+    justify-content: center;
+    background-color: #000033;
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+  }
+  
+  .header button {
+    background: none;
+    border: none;
+    color: #ccc;
+    padding: 8px;
+    cursor: pointer;
+    font-size: 12px;
+    transition: background-color 0.3s;
+  }
+  
+  .header button.active {
+    color:var(--white-color);
+  }
+  
+  .main-content {
+    display: flex;
+    flex: 1;
+    position: relative;
+  }
+  
+  .left-section {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding: 100px 0 40px 40px;
+    row-gap: 10px;
+  }
+
+  .case-study-left-section-title{
+    font-size: 12px;
+  }
+  .case-study-left-section-image{
+    height: 75px;
+    width: 200px;
+  }
+  .case-study-left-section-sub-heading{
+    font-size: 10px;
+    color: #ccc;
+  }
+  .case-study-left-section-button-container{
+    display: flex;
+  }  
+  .expertise-button {
+    background-color: var(--dark-blue-color);
+    border: none;
+    font-size: 10px;
+    color: white;
+    padding: 5px 10px;
+    margin-right: 5px;
+    cursor: pointer;
+    border-radius: 50px;
+  }
+  .case-study-left-section-description{
+    font-size: 11px;
+    font-weight: 600;
+    color: #ccc;
+  }
+  .case-study-link{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .case-study-link a {
+    color: var(--secondary-color);
+    text-decoration: none;
+    font-size: 12px;
+  }
+  .case-study-link img{
+    width: 20px;
+    height: 20px;
+    color: var(--secondary-color);
+  }
+  .mid-section{
+    flex: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .right-section {
+    flex: 1;
+    background-color: var(--secondary-color);
+    padding: 20px;
+    overflow: hidden;
+    clip-path: polygon(15% 0, 100% 0, 100% 100%, 0 100%); /* Titled shape */
+    text-align: left;
+    position: relative;
+  }
+  
+
+
+  
+  .link-list {
+
+    list-style: none;
+    padding: 0;
+    margin-left: 3rem;
+  }
+  
+  .link-list li {
+    padding: 15px;
+    cursor: pointer;
+    color: white;
+    font-size: 14px;
+    font-weight: 600;
+    transition: background-color 0.3s;
+  }
+  
+  .link-list .active {
+    background-color: #000033;
+  }
+  
+
+  
+  .laptop-image {
+    max-width: 100%;
+  }
+  
+  .cta-button {
+    position: absolute;
+    right: -40px;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #0052cc;
+    color: white;
+    padding: 10px 20px;
+    cursor: pointer;
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background-color 0.3s;
+  }
+  
+  .cta-button:hover {
+    background-color: #003366;
+  }
+  

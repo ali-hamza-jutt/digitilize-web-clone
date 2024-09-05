@@ -8,6 +8,7 @@ import FactsAtAGlance from './components/stats/FactsAtAGlance';
 import AwardsAndCertifications from './components/awards-and-certifications/AwardsAndCertifications';
 import FaqSection from './components/faq-section/FaqSection';
 import Footer from './components/footer/Footer';
+import CaseStudy from './components/case-study/CaseStudy';
 function App() {
   return (
     <div className="App">
@@ -17,6 +18,7 @@ function App() {
       <Services/>
       <TestimonialsCarousel/>
       <FactsAtAGlance/>
+      <CaseStudy/>
       <AwardsAndCertifications/>
       <FaqSection/>
       <Footer/>
