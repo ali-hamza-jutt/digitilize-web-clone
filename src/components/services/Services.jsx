@@ -3,39 +3,16 @@ import './Services.css';
 
 export default function Services() {
   const services = [
-    'Web Design and Development',
-    'Mobile Applications',
-    'E-Commerce Solutions',
-    'Website Maintenance',
-    'Digital Marketing',
-    'Hire A Resource'
+    { name: 'Web Design and Development',image:'https://www.digitilizeweb.com/wp-content/w3-webp/uploads/2022/02/Frame-1-2.pngw3.webp' },
+    { name: 'Mobile Applications',image:'https://www.digitilizeweb.com/wp-content/w3-webp/uploads/2022/02/Frame-10.pngw3.webp' },
+    { name: 'E-Commerce Solutions',image:'https://www.digitilizeweb.com/wp-content/uploads/2022/02/Frame-11.png' },
+    { name: 'Website Maintenance',image:'https://www.digitilizeweb.com/wp-content/w3-webp/uploads/2022/02/Frame-13.pngw3.webp' },
+    { name: 'Digital Marketing',image:'https://www.digitilizeweb.com/wp-content/uploads/2022/02/Frame-12.png' },
+    { name: 'Hire A Resource',image:'https://www.digitilizeweb.com/wp-content/w3-webp/uploads/2022/02/Frame-14.pngw3.webp' }
   ];
 
-  // Masonry effect logic
-  useEffect(() => {
-    const grid = document.querySelector('.services-cards');
-    const gridItems = document.querySelectorAll('.service-card');
-    
-    const resizeMasonryItem = (item) => {
-      const grid = document.querySelector('.services-cards');
-      const rowHeight = parseInt(window.getComputedStyle(grid).getPropertyValue('grid-auto-rows'));
-      const rowGap = parseInt(window.getComputedStyle(grid).getPropertyValue('grid-row-gap'));
-      const rowSpan = Math.ceil((item.querySelector('.service-card-content').getBoundingClientRect().height + rowGap) / (rowHeight + rowGap));
-      item.style.gridRowEnd = 'span ' + rowSpan;
-    };
 
-    const resizeAllMasonryItems = () => {
-      gridItems.forEach(item => resizeMasonryItem(item));
-    };
-
-    window.addEventListener('load', resizeAllMasonryItems);
-    window.addEventListener('resize', resizeAllMasonryItems);
-
-    return () => {
-      window.removeEventListener('load', resizeAllMasonryItems);
-      window.removeEventListener('resize', resizeAllMasonryItems);
-    };
-  }, []);
+  
 
   return (
     <div className="services-container">
@@ -50,8 +27,8 @@ export default function Services() {
         {services.map((service, index) => (
           <div key={index} className="service-card">
             <div className="service-card-content">
-              <img src="https://www.digitilizeweb.com/wp-content/w3-webp/uploads/2022/02/Frame-1-2.pngw3.webp" alt="Service Icon" className="service-card-icon" />
-              <p className="service-card-title">{service}</p>
+              <img src={service.image} alt="Service Icon" className="service-card-icon" />
+              <p className="service-card-title">{service.name}</p>
             </div>
           </div>
         ))}
