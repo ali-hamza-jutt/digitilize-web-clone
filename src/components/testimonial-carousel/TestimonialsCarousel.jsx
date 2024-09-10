@@ -119,9 +119,11 @@ const TestimonialsCarousel = () => {
     <div className="carousel-container">
       <p className="carousel-container-secondary-heading">Testimonials</p>
       <p className="carousel-container-primary-heading">People who trust us</p>
-      <div className="testimonial-container">
+      <div className="testimonial-section">
+
+      <div className={`testimonial-container ${direction}`}>
       <div className="carousel-content">
-        <div className={`carousel-item ${direction}`}>
+        <div className={`carousel-item`}>
           <img src={testimonials[currentIndex].image} alt={testimonials[currentIndex].name} className="carousel-image" />
           <Box
             sx={{
@@ -150,8 +152,9 @@ const TestimonialsCarousel = () => {
           </div>
         </div>
       </div>
-        <div ><img className="testimonee-image" src={testimonials[currentIndex].image} alt={testimonials[currentIndex].name} /></div>
+        <div ><img className={`testimonee-image`} src={testimonials[currentIndex].image} alt={testimonials[currentIndex].name} /></div>
 
+      </div>
       </div>
       
       <div className="carousel-controls">
