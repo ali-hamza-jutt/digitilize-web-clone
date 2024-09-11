@@ -53,8 +53,7 @@
     font-size: 12px;
   }
   .case-study-left-section-image{
-    height: 75px;
-    width: 200px;
+    width: 100px;
   }
   .case-study-left-section-sub-heading{
     font-size: 10px;
@@ -122,16 +121,18 @@
   }
   
   .link-list li {
-    padding: 15px;
+    padding: 10px;
+    margin: 10px;
     cursor: pointer;
     color: white;
-    font-size: 14px;
+    font-size: 12px;
     font-weight: 600;
     transition: background-color 0.3s;
   }
   
   .link-list .active {
     background-color: #000033;
+    border-radius: 50px;
   }
   
 
