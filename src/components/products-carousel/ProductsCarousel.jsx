@@ -30,14 +30,25 @@ const ProductsCarousel = () => {
     dots: false,
     infinite: true,
     speed: 500,
-    slidesToShow: 6,
+    slidesToShow: 6, // Default for larger screens
     slidesToScroll: 1,
     autoplay: false,
     draggable: true,
     arrows: false,
-    beforeChange: (current, next) => {
-      // Additional logic if needed before changing the slide
-    },
+    responsive: [
+      {
+        breakpoint: 1024, // For screens smaller than 1024px
+        settings: {
+          slidesToShow: 4, // Show 4 slides on medium screens
+        },
+      },
+      {
+        breakpoint: 480, // For screens smaller than 480px
+        settings: {
+          slidesToShow: 2, // Show 2 slides on small screens
+        },
+      },
+    ],
   };
 
   return (
