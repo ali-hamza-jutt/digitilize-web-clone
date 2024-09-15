@@ -94,6 +94,7 @@
     margin-top: 20px;
     display: flex;
     justify-content: left;
+    align-items: center;
     gap: 20px;
     width: 100%;
     bottom: 1rem;
@@ -116,4 +117,37 @@
     cursor: pointer;
     transition: background-color 0.3s;
     font-size: 30px;
+}
+
+
+@media (max-width: 768px) {
+    .hero-carousel-container{
+        height: 60vh;
+    }
+    .hero-carousel-text-container{
+        width: 90%;
+        padding-left: 1rem;
+    }
+    .hero-carousel-slide{
+        width: 100%;
+    }
+    .hero-carousel-image {
+        display: none;
+    }
+    .hero-carousel-text h2{
+        font-weight: 400;
+        font-size: 18px;
+        margin-bottom: 1rem;
+    }
+    .hero-carousel-text h1{
+        font-size: 34px;
+    }
+    .hero-carousel-nav button{
+        font-size: 22px;
+        padding: 5px 7.5px;
+    }
+    .hero-carousel-nav-item{
+        font-size: 24px;
+        display: flex;
+    }
 }
