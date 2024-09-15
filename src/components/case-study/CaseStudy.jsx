@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import './CaseStudy.css';
 import ukPropertiesLogo from '../../assets/UK-properties-logo-2-02-1.pngw3.webp';
 import rightArrow from '../../assets/bi_arrow-right.png';
@@ -305,16 +305,56 @@ const eCommerceData = [
 ];
 
 
+
+
 const CaseStudy = () => {
   const [contentData, setContentData] = useState(webContentData);
   const [selectedContent, setSelectedContent] = useState(contentData[0]);
+  const [animate, setAnimate] = useState(false);
+  const caseStudyRef = useRef(null);
 
   const handleLinkClick = (id) => {
     const content = contentData.find((item) => item.id === id);
     if (content) {
+      setAnimate(true); // Trigger animation
       setSelectedContent(content);
     }
   };
+
+  // Content change animation reset
+  useEffect(() => {
+    if (animate) {
+      const timer = setTimeout(() => {
+        setAnimate(false);
+      }, 600); // Duration should match the CSS animation time
+
+      return () => clearTimeout(timer); // Cleanup the timeout
+    }
+  }, [animate]);
+
+  // Scroll-based animation using IntersectionObserver
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setAnimate(true);
+          }
+        });
+      },
+      { threshold: 0.5 } // Trigger when 50% of the section is visible
+    );
+
+    if (caseStudyRef.current) {
+      observer.observe(caseStudyRef.current);
+    }
+
+    return () => {
+      if (caseStudyRef.current) {
+        observer.unobserve(caseStudyRef.current);
+      }
+    };
+  }, []);
 
   const handleCategoryClick = (category) => {
     switch (category) {
@@ -331,24 +371,36 @@ const CaseStudy = () => {
         setContentData(webContentData);
     }
     setSelectedContent(contentData[0]); // Optionally reset to the first item
+    setAnimate(true); // Trigger animation on content change
   };
 
   return (
-    <div className="case-study-container">
+    <div className="case-study-container" ref={caseStudyRef}>
       <div className="main-content">
         <div className="left-section">
-          <p className='case-study-left-section-title'>{selectedContent.title}</p>
-          <img className="case-study-left-section-image" src={selectedContent.logoImage} alt="logo" />
-          <p className='case-study-left-section-sub-heading'>Our Expertise</p>
-          <div className="case-study-left-section-button-container">
+          <p className={`case-study-left-section-title ${animate ? 'animate' : ''}`}>
+            {selectedContent.title}
+          </p>
+
+          <img
+            className={`case-study-left-section-image ${animate ? 'animate' : ''}`}
+            src={selectedContent.logoImage}
+            alt="logo"
+          />
+          <p className={`case-study-left-section-sub-heading ${animate ? 'animate' : ''}`}>
+            Our Expertise
+          </p>
+          <div className={`case-study-left-section-button-container ${animate ? 'animate' : ''}`}>
             {selectedContent.expertise.map((item, index) => (
               <button key={index} className="expertise-button">
                 {item}
               </button>
             ))}
           </div>
-          <p className='case-study-left-section-description'>{selectedContent.description}</p>
-          <div className="case-study-link">
+          <p className={`case-study-left-section-description ${animate ? 'animate' : ''}`}>
+            {selectedContent.description}
+          </p>
+          <div className={`case-study-link ${animate ? 'animate' : ''}`}>
             <a href="#">View Case Study</a>
             <img src={rightArrow} alt="->" />
           </div>
@@ -378,7 +430,11 @@ const CaseStudy = () => {
             </div>
           </div>
           <div className="image-container">
-            <img src={selectedContent.imageUrl} alt={selectedContent.title} className="laptop-image" />
+            <img
+              src={selectedContent.imageUrl}
+              alt={selectedContent.title}
+              className="laptop-image"
+            />
           </div>
         </div>
 

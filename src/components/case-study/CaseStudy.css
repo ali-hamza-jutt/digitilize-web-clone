@@ -161,3 +161,31 @@
     background-color: #003366;
   }
   
+
+/* Add keyframes for left-to-right animation */
+@keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Apply animation to left section elements */
+.case-study-left-section-title,
+.case-study-left-section-image,
+.case-study-left-section-sub-heading,
+.case-study-left-section-button-container,
+.case-study-left-section-description,
+.case-study-link {
+  animation: fadeInLeft 0.6s ease forwards;
+  opacity: 0; /* Start with hidden state */
+}
+
+/* Trigger animation when content changes or scrolls into view */
+.animate {
+  animation: fadeInLeft 0.6s ease forwards;
+}
