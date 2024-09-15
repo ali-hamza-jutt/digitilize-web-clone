@@ -90,12 +90,13 @@
 }
 
 .hero-carousel-nav {
-    position: relative;
+    position: absolute;
     margin-top: 20px;
     display: flex;
     justify-content: left;
     gap: 20px;
     width: 100%;
+    bottom: 1rem;
 }
 
 .hero-carousel-nav-item {
